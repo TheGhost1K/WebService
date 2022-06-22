@@ -1,0 +1,130 @@
+﻿@model PaginatedList<Service.Models.ServicesViewModel>
+@{
+    string strTitle = "Панель администратора";
+    ViewBag.Title = strTitle;
+}
+<h2>Список заявлений</h2>
+
+<form asp-area="Admin" asp-action="Index" method="get">
+    <div class="form-action no-color">
+        <p>
+            Поиск:<input type="text" name="searchString" value="@ViewData["CurrentFilter"]"/>
+            <input type ="submit" value="Поиск" class="btn btn-success"/>
+            <a asp-action="Index"> Сбросить фильтр</a>
+        </p>
+    </div>
+    <h2>Импорт файла Excel</h2>
+    <div>
+        <a asp-action="Import" asp-controller="Home" class="button primary">
+            Загрузить баллы БРС
+        </a>
+    </div>
+<label></label>
+    <div>
+        <a asp-action="Export" asp-controller="Home" class="button primary">
+            Экспорт Базы Данных
+        </a>
+    </div>
+<div>
+    <label>Число студентов, выбравших первым направлением, математику: @ViewData["FirstMATH"]</label>
+    <label>Число студентов, выбравших первым направлением, механику: @ViewData["FirstMEH"]</label>
+    <label>Число студентов, выбравших первым направлением, ПМ: @ViewData["FirstMAT"]</label>
+    <label>Число студентов, выбравших первым направлением, математику и КН: @ViewData["FirstCS"]</label>
+    <label>Число студентов, выбравших первым направлением, МОАИС: @ViewData["FirstADM"]</label>
+@*    <label>Число студентов, выбравших вторым направлением, математику: @ViewData["SecondMATH"]</label>
+    <label>Число студентов, выбравших вторым направлением, механику: @ViewData["SecondMEH"]</label>
+    <label>Число студентов, выбравших вторым направлением, ПМ: @ViewData["SecondMAT"]</label>
+    <label>Число студентов, выбравших вторым направлением, математику и КН: @ViewData["SecondCS"]</label>
+    <label>Число студентов, выбравших вторым направлением, МОАИС: @ViewData["SecondADM"]</label>
+    <label>Число студентов, выбравших третьим направлением, математику: @ViewData["ThirdMATH"]</label>
+    <label>Число студентов, выбравших третьим направлением, механику: @ViewData["ThirdMEH"]</label>
+    <label>Число студентов, выбравших третьим направлением, ПМ: @ViewData["ThirdMAT"]</label>
+    <label>Число студентов, выбравших третьим направлением, математику и ПМ: @ViewData["ThirdCS"]</label>
+    <label>Число студентов, выбравших третьим направлением, МОАИС: @ViewData["ThirdADM"]</label>*@
+</div>
+</form>
+
+<table class="table">
+    <thead>       
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["IdSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">№</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">ФИО</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["GroupSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Группа</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DirSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Текущее направление</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["FirstSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Первое направление</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["SecondSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Второе направление</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["ThirdSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Третье направление</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["AvgSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Средний балл</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Group)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstProfile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondProfile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThirdProfile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Average)
+            </td>
+            <td>
+                <a asp-area="Admin" asp-action="Edit" asp-controller="Home" asp-route-id="@item.Id">Изменить</a> |
+                <a asp-area="Admin" asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@{ 
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder ="@ViewData["CurrentSort"]"
+   asp-route-pageNumber ="@(Model.PageIndex-1)"
+   asp-route-currentFilter = "@ViewData["CurrentFilter"]"
+   class="button primary @prevDisabled">
+    Назад
+</a>
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex+1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="button primary @nextDisabled">
+    Вперед
+</a>

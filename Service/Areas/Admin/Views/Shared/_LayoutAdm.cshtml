@@ -1,0 +1,39 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+	<head>
+		@await Html.PartialAsync("MetatagsPartial")
+		@await Html.PartialAsync("CssPartial")
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+			@await Html.PartialAsync("HeaderPartial")
+
+
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						@*<header class="major">
+							<h2>Сервис</h2>
+							<p>На этом сайте вы сможете заполнить заявление о переводе</p>
+						</header>*@
+						<div class="row gtr-150">
+							<div class="col-8 col-12-medium">
+								@RenderBody()
+							</div>
+							@*<div class="col-4 col-12-medium">
+
+							@await Html.PartialAsync("SidebarPartial")
+
+							</div>*@
+						</div>
+					</div>
+				</div>
+
+			@await Html.PartialAsync("FooterPartial")
+
+		</div>
+
+		@await Html.PartialAsync("ScriptsPartial")
+
+	</body>
+</html>

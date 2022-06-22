@@ -1,0 +1,38 @@
+﻿@model List<Service.Domain.Entities.PRSystem>    
+<div class="row">
+    <div class="col-md-12">
+        <form asp-area="Admin" asp-action="Import" asp-controller="Home" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Загрузить файл</label>
+                <input id="excel" name="excel" class="form-control" type="file">
+                <button type="submit" class="button primary">Загрузить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table">
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subjects)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Points)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semesters)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<label>Средний балл: @ViewData["Avg"]</label>
+<a asp-action="Index" class="button primary">Назад</a>

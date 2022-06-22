@@ -1,0 +1,43 @@
+﻿@model Service.Models.ServicesViewModel
+@{
+    ViewBag.Title = "Удаление заявления";
+}
+ 
+    <table class="table">
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Id)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Group)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Direction)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.FirstProfile)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.SecondProfile)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ThirdProfile)
+            </td>  
+            <td>
+                @Html.DisplayFor(model => model.Average)
+            </td>  
+         </tr>
+    </table>
+ 
+    <div>
+        <form asp-area="Admin" asp-controller="Home" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="button primary" value="Удалить" />
+            </div>
+            <a asp-action="Index"> Назад</a>
+        </form>
+    </div>
