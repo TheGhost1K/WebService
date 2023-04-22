@@ -8,13 +8,13 @@ namespace Service.Controllers
 {
     public class ServicesController : Controller
     {
-        private readonly IWebHostEnvironment environment;
-        private readonly AppDbContext db;
+        private readonly IWebHostEnvironment _environment;
+        private readonly AppDbContext _db;
 
         public ServicesController(IWebHostEnvironment environment, AppDbContext content)
         {
-            db = content;
-            this.environment = environment;
+            _db = content;
+            _environment = environment;
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             ComponentInfo.FreeLimitReached += (sender, e) => e.FreeLimitReachedAction = FreeLimitReachedAction.Stop;
         }
@@ -25,19 +25,26 @@ namespace Service.Controllers
             return View(new ServicesViewModel());
         }
 
-        public FileStreamResult Download(ServicesViewModel model)
+        public async Task<IActionResult> Download(ServicesViewModel model)
         {
-            var path = Path.Combine(environment.ContentRootPath, "Shablon.docx");
-            var document = DocumentModel.Load(path);
+            if (ModelState.IsValid)
+            {
+                var path = Path.Combine(_environment.ContentRootPath, "Shablon.docx");
+                var document = DocumentModel.Load(path);
 
-            document.MailMerge.Execute(model);
-            var stream = new MemoryStream();
+                document.MailMerge.Execute(model);
+                var stream = new MemoryStream();
 
-            document.Save(stream, model.Options);
-            db.Statements.Add(model);
-            db.SaveChanges();
+                document.Save(stream, model.Options);
+                _db.Statements.Add(model);
+                await _db.SaveChangesAsync();
 
-            return File(stream, model.Options.ContentType, $"Statement.{model.Format.ToLower()}");
+                return File(stream, model.Options.ContentType, $"Statement.{model.Format.ToLower()}");
+            }
+            else
+            {
+                return View("ErrorService");
+            }
         }
     }
 }

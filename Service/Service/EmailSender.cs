@@ -25,7 +25,7 @@ namespace Service.Service
                 EnableSsl = true
             };
 
-            smtpClient.Send(message);
+            await smtpClient.SendMailAsync(message);
         }
     }
 }
