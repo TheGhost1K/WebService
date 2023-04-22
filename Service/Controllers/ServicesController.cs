@@ -8,13 +8,13 @@ namespace Service.Controllers
 {
     public class ServicesController : Controller
     {
-        private readonly IWebHostEnvironment _environment;
-        private readonly AppDbContext _db;
+        private readonly IWebHostEnvironment environment;
+        private readonly AppDbContext db;
 
         public ServicesController(IWebHostEnvironment environment, AppDbContext content)
         {
-            _db = content;
-            _environment = environment;
+            db = content;
+            this.environment = environment;
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
             ComponentInfo.FreeLimitReached += (sender, e) => e.FreeLimitReachedAction = FreeLimitReachedAction.Stop;
         }
@@ -25,26 +25,19 @@ namespace Service.Controllers
             return View(new ServicesViewModel());
         }
 
-        public async Task<IActionResult> Download(ServicesViewModel model)
+        public FileStreamResult Download(ServicesViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                var path = Path.Combine(_environment.ContentRootPath, "Shablon.docx");
-                var document = DocumentModel.Load(path);
+            var path = Path.Combine(environment.ContentRootPath, "Shablon.docx");
+            var document = DocumentModel.Load(path);
 
-                document.MailMerge.Execute(model);
-                var stream = new MemoryStream();
+            document.MailMerge.Execute(model);
+            var stream = new MemoryStream();
 
-                document.Save(stream, model.Options);
-                _db.Statements.Add(model);
-                await _db.SaveChangesAsync();
+            document.Save(stream, model.Options);
+            db.Statements.Add(model);
+            db.SaveChanges();
 
-                return File(stream, model.Options.ContentType, $"Statement.{model.Format.ToLower()}");
-            }
-            else
-            {
-                return View("ErrorService");
-            }
+            return File(stream, model.Options.ContentType, $"Statement.{model.Format.ToLower()}");
         }
     }
 }

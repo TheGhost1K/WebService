@@ -19,11 +19,11 @@ namespace Service.Areas.Admin.Controllers
     [Area("Admin")]
     public class HomeController : Controller
     {
-        private readonly AppDbContext _db;
+        private readonly AppDbContext db;
 
         public HomeController(AppDbContext context)
         {
-            _db = context;
+            db = context;
         }
 
         public async Task<IActionResult> Index(
@@ -53,58 +53,92 @@ namespace Service.Areas.Admin.Controllers
 
             ViewData["CurrentFilter"] = searchString;
             
-            var statements = from s in _db.Statements select s;
+            var statements = from s in db.Statements select s;
 
-            ViewData["FirstMATH"] = _db.Statements.Where(s => s.FirstProfile == "01.03.01 Математика").Count();
-            ViewData["FirstMEH"] = _db.Statements.Where(s => s.FirstProfile == "01.03.03 Механика и математическое моделирование").Count();
-            ViewData["FirstMAT"] = _db.Statements.Where(s => s.FirstProfile == "01.03.04 Прикладная математика").Count();
-            ViewData["FirstCS"] = _db.Statements.Where(s => s.FirstProfile == "02.03.01 Математика и компьютерные науки").Count();
-            ViewData["FirstADM"] = _db.Statements.Where(s => s.FirstProfile == "02.03.03 Математическое обеспечение и администрирование информационных систем").Count();
+            ViewData["FirstMATH"] = db.Statements.Where(s => s.FirstProfile == "01.03.01 Математика").Count();
+            ViewData["FirstMEH"] = db.Statements.Where(s => s.FirstProfile == "01.03.03 Механика и математическое моделирование").Count();
+            ViewData["FirstMAT"] = db.Statements.Where(s => s.FirstProfile == "01.03.04 Прикладная математика").Count();
+            ViewData["FirstCS"] = db.Statements.Where(s => s.FirstProfile == "02.03.01 Математика и компьютерные науки").Count();
+            ViewData["FirstADM"] = db.Statements.Where(s => s.FirstProfile == "02.03.03 Математическое обеспечение и администрирование информационных систем").Count();
 
-            ViewData["SecondMATH"] = _db.Statements.Where(s => s.SecondProfile == "01.03.01 Математика").Count();
-            ViewData["SecondMEH"] = _db.Statements.Where(s => s.SecondProfile == "01.03.03 Механика и математическое моделирование").Count();
-            ViewData["SecondMAT"] = _db.Statements.Where(s => s.SecondProfile == "01.03.04 Прикладная математика").Count();
-            ViewData["SecondCS"] = _db.Statements.Where(s => s.SecondProfile == "02.03.01 Математика и компьютерные науки").Count();
-            ViewData["SecondADM"] = _db.Statements.Where(s => s.SecondProfile == "02.03.03 Математическое обеспечение и администрирование информационных систем").Count();
+            ViewData["SecondMATH"] = db.Statements.Where(s => s.SecondProfile == "01.03.01 Математика").Count();
+            ViewData["SecondMEH"] = db.Statements.Where(s => s.SecondProfile == "01.03.03 Механика и математическое моделирование").Count();
+            ViewData["SecondMAT"] = db.Statements.Where(s => s.SecondProfile == "01.03.04 Прикладная математика").Count();
+            ViewData["SecondCS"] = db.Statements.Where(s => s.SecondProfile == "02.03.01 Математика и компьютерные науки").Count();
+            ViewData["SecondADM"] = db.Statements.Where(s => s.SecondProfile == "02.03.03 Математическое обеспечение и администрирование информационных систем").Count();
 
-            ViewData["ThirdMATH"] = _db.Statements.Where(s => s.ThirdProfile == "01.03.01 Математика").Count();
-            ViewData["ThirdMEH"] = _db.Statements.Where(s => s.ThirdProfile == "01.03.03 Механика и математическое моделирование").Count();
-            ViewData["ThirdMAT"] = _db.Statements.Where(s => s.ThirdProfile == "01.03.04 Прикладная математика").Count();
-            ViewData["ThirdCS"] = _db.Statements.Where(s => s.ThirdProfile == "02.03.01 Математика и компьютерные науки").Count();
-            ViewData["ThirdADM"] = _db.Statements.Where(s => s.ThirdProfile == "02.03.03 Математическое обеспечение и администрирование информационных систем").Count();
+            ViewData["ThirdMATH"] = db.Statements.Where(s => s.ThirdProfile == "01.03.01 Математика").Count();
+            ViewData["ThirdMEH"] = db.Statements.Where(s => s.ThirdProfile == "01.03.03 Механика и математическое моделирование").Count();
+            ViewData["ThirdMAT"] = db.Statements.Where(s => s.ThirdProfile == "01.03.04 Прикладная математика").Count();
+            ViewData["ThirdCS"] = db.Statements.Where(s => s.ThirdProfile == "02.03.01 Математика и компьютерные науки").Count();
+            ViewData["ThirdADM"] = db.Statements.Where(s => s.ThirdProfile == "02.03.03 Математическое обеспечение и администрирование информационных систем").Count();
 
             if (!string.IsNullOrEmpty(searchString))
             {
                 statements = statements.Where(s =>
-                                        s.FullName!.Contains(searchString) ||
-                                        s.Group!.Contains(searchString) ||
-                                        s.Direction!.Contains(searchString) ||
-                                        s.FirstProfile!.Contains(searchString) ||
-                                        s.SecondProfile!.Contains(searchString) ||
-                                        s.ThirdProfile!.Contains(searchString) ||
+                                        s.FullName.Contains(searchString) ||
+                                        s.Group.Contains(searchString) ||
+                                        s.Direction.Contains(searchString) ||
+                                        s.FirstProfile.Contains(searchString) ||
+                                        s.SecondProfile.Contains(searchString) ||
+                                        s.ThirdProfile.Contains(searchString) ||
                                         s.Average.Contains(searchString));
             }
 
-            statements = sortOrder switch
+            switch (sortOrder)
             {
-                "FullNameAsc" => statements.OrderBy(s => s.FullName),
-                "FullNameDesc" => statements.OrderByDescending(s => s.FullName),
-                "IdAsc" => statements.OrderBy(s => s.Id),
-                "IdDesc" => statements.OrderByDescending(s => s.Id),
-                "GroupAsc" => statements.OrderBy(s => s.Group),
-                "GroupDesc" => statements.OrderByDescending(s => s.Group),
-                "DirAsc" => statements.OrderBy(s => s.Direction),
-                "DirDesc" => statements.OrderByDescending(s => s.Direction),
-                "FirstProfileAsc" => statements.OrderBy(s => s.FirstProfile),
-                "FirstProfileDesc" => statements.OrderByDescending(s => s.FirstProfile),
-                "SecondProfileAsc" => statements.OrderBy(s => s.SecondProfile),
-                "SecondProfileDesc" => statements.OrderByDescending(s => s.SecondProfile),
-                "ThirdProfileAsc" => statements.OrderBy(s => s.ThirdProfile),
-                "ThirdProfileDesc" => statements.OrderByDescending(s => s.ThirdProfile),
-                "AvgAsc" => statements.OrderBy(s => s.Average),
-                "AvgDesc" => statements.OrderByDescending(s => s.Average),
-                _ => statements.OrderBy(s => s.Id),
-            };
+                case "FullNameAsc":
+                    statements = statements.OrderBy(s => s.FullName);
+                    break;
+                case "FullNameDesc":
+                    statements = statements.OrderByDescending(s => s.FullName);
+                    break;
+                case "IdAsc":
+                    statements = statements.OrderBy(s => s.Id);
+                    break;
+                case "IdDesc":
+                    statements = statements.OrderByDescending(s => s.Id);
+                    break;
+                case "GroupAsc":
+                    statements = statements.OrderBy(s => s.Group);
+                    break;
+                case "GroupDesc":
+                    statements = statements.OrderByDescending(s => s.Group);
+                    break;
+                case "DirAsc":
+                    statements = statements.OrderBy(s => s.Direction);
+                    break;
+                case "DirDesc":
+                    statements = statements.OrderByDescending(s => s.Direction);
+                    break;
+                case "FirstProfileAsc":
+                    statements = statements.OrderBy(s => s.FirstProfile);
+                    break;
+                case "FirstProfileDesc":
+                    statements = statements.OrderByDescending(s => s.FirstProfile);
+                    break;
+                case "SecondProfileAsc":
+                    statements = statements.OrderBy(s => s.SecondProfile);
+                    break;
+                case "SecondProfileDesc":
+                    statements = statements.OrderByDescending(s => s.SecondProfile);
+                    break;
+                case "ThirdProfileAsc":
+                    statements = statements.OrderBy(s => s.ThirdProfile);
+                    break;
+                case "ThirdProfileDesc":
+                    statements = statements.OrderByDescending(s => s.ThirdProfile);
+                    break;
+                case "AvgAsc":
+                    statements = statements.OrderBy(s => s.Average);
+                    break;
+                case "AvgDesc":
+                    statements = statements.OrderByDescending(s => s.Average);
+                    break;
+                default:
+                    statements = statements.OrderBy(s => s.Id);
+                    break;                   
+            }
             int pageSize = 3;
             return View(await PaginatedList<ServicesViewModel>.CreateAsync(statements.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
@@ -202,7 +236,7 @@ namespace Service.Areas.Admin.Controllers
 
                 var row = 2;
 
-                foreach (var statement in _db.Statements)
+                foreach (var statement in db.Statements)
                 {
                     worksheet.Cells[row, 1].Value = statement.Id;
                     worksheet.Cells[row, 2].Value = statement.FullName;
@@ -226,7 +260,7 @@ namespace Service.Areas.Admin.Controllers
         {
             if (id != null)
             {
-                var service = await _db.Statements.FirstOrDefaultAsync(p => p.Id == id);
+                var service = await db.Statements.FirstOrDefaultAsync(p => p.Id == id);
                 if (service != null)
                     return View(service);
             }
@@ -236,8 +270,8 @@ namespace Service.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(ServicesViewModel service)
         {
-            _db.Statements.Update(service);
-            await _db.SaveChangesAsync();
+            db.Statements.Update(service);
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
@@ -247,7 +281,7 @@ namespace Service.Areas.Admin.Controllers
         {
             if (id != null)
             {
-                var service = await _db.Statements.FirstOrDefaultAsync(p => p.Id == id);
+                var service = await db.Statements.FirstOrDefaultAsync(p => p.Id == id);
                 if (service != null)
                     return View(service);
             }
@@ -259,11 +293,11 @@ namespace Service.Areas.Admin.Controllers
         {
             if (id != null)
             {
-                ServicesViewModel? service = await _db.Statements.FirstOrDefaultAsync(p => p.Id == id);
+                ServicesViewModel? service = await db.Statements.FirstOrDefaultAsync(p => p.Id == id);
                 if (service != null)
                 {
-                    _db.Statements.Remove(service);
-                    await _db.SaveChangesAsync();
+                    db.Statements.Remove(service);
+                    await db.SaveChangesAsync();
                     return RedirectToAction("Index");
                 }
             }

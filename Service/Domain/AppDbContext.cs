@@ -31,7 +31,7 @@ namespace Service.Domain
                 Email = "email@email.ru",
                 NormalizedEmail = "EMAIL@EMAIL.RU",
                 EmailConfirmed = true,
-                PasswordHash = new PasswordHasher<Student>().HashPassword(null!, "admin123"),
+                PasswordHash = new PasswordHasher<Student>().HashPassword(null, "admin123"),
                 SecurityStamp = string.Empty
             });
 

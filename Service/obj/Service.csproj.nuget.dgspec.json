@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Losck\\Source\\Repos\\WebService\\Service\\Service.csproj": {}
+    "D:\\repositories\\Service\\Service\\Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Losck\\Source\\Repos\\WebService\\Service\\Service.csproj": {
+    "D:\\repositories\\Service\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Losck\\Source\\Repos\\WebService\\Service\\Service.csproj",
+        "projectUniqueName": "D:\\repositories\\Service\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\Losck\\Source\\Repos\\WebService\\Service\\Service.csproj",
+        "projectPath": "D:\\repositories\\Service\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\Losck\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Losck\\Source\\Repos\\WebService\\Service\\obj\\",
+        "outputPath": "D:\\repositories\\Service\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Losck\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,16 +37,16 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "ClosedXML": {
               "target": "Package",
-              "version": "[0.101.0, )"
+              "version": "[0.95.4, )"
             },
             "EPPlus": {
               "target": "Package",
-              "version": "[6.2.2, )"
+              "version": "[6.0.5, )"
             },
             "ExcelDataReader": {
               "target": "Package",
@@ -54,11 +54,11 @@
             },
             "GemBox.Document": {
               "target": "Package",
-              "version": "[35.0.1331, )"
+              "version": "[35.0.1020, )"
             },
             "MailKit": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[3.3.0, )"
             },
             "Microsoft.AspNet.Mvc": {
               "target": "Package",
@@ -66,55 +66,55 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.6, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.6, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.6, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[7.0.6, )"
+              "version": "[6.0.6, )"
             },
             "MimeKit": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[3.3.0, )"
             },
             "NPOI": {
               "target": "Package",
-              "version": "[2.6.0, )"
+              "version": "[2.5.6, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.5.0, )"
+              "version": "[6.3.1, )"
             },
             "System.Text.Encoding.CodePages": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[6.0.0, )"
             },
             "TemplateEngine.Docx": {
               "target": "Package",
@@ -127,8 +127,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -140,7 +139,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

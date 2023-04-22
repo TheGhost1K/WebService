@@ -5,129 +5,128 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Service
 build_property.RootNamespace = Service
-build_property.ProjectDir = C:\Users\Losck\Source\Repos\WebService\Service\
+build_property.ProjectDir = D:\repositories\Service\Service\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Losck\Source\Repos\WebService\Service
+build_property.MSBuildProjectDirectory = D:\repositories\Service\Service
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Areas/Admin/Views/Home/Delete.cshtml]
+[D:/repositories/Service/Service/Areas/Admin/Views/Home/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Areas/Admin/Views/Home/Edit.cshtml]
+[D:/repositories/Service/Service/Areas/Admin/Views/Home/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Areas/Admin/Views/Home/Error.cshtml]
+[D:/repositories/Service/Service/Areas/Admin/Views/Home/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Areas/Admin/Views/Home/Import.cshtml]
+[D:/repositories/Service/Service/Areas/Admin/Views/Home/Import.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Areas/Admin/Views/Home/Index.cshtml]
+[D:/repositories/Service/Service/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Areas/Admin/Views/Shared/_LayoutAdm.cshtml]
+[D:/repositories/Service/Service/Areas/Admin/Views/Shared/_LayoutAdm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/repositories/Service/Service/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/repositories/Service/Service/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Account/AccessDenied.cshtml]
+[D:/repositories/Service/Service/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Account/ConfirmEmail.cshtml]
+[D:/repositories/Service/Service/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Account/Error.cshtml]
+[D:/repositories/Service/Service/Views/Account/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Account/ForgotPassword.cshtml]
+[D:/repositories/Service/Service/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Account/ForgotPasswordConfirmation.cshtml]
+[D:/repositories/Service/Service/Views/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Account/Login.cshtml]
+[D:/repositories/Service/Service/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Account/Register.cshtml]
+[D:/repositories/Service/Service/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Account/RegisterEmail.cshtml]
+[D:/repositories/Service/Service/Views/Account/RegisterEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlckVtYWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Account/ResetPassword.cshtml]
+[D:/repositories/Service/Service/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Account/ResetPasswordConfirmation.cshtml]
+[D:/repositories/Service/Service/Views/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Home/Index.cshtml]
+[D:/repositories/Service/Service/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Services/Index.cshtml]
+[D:/repositories/Service/Service/Views/Services/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Shared/CssPartial.cshtml]
+[D:/repositories/Service/Service/Views/Shared/CssPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENzc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Shared/FooterPartial.cshtml]
+[D:/repositories/Service/Service/Views/Shared/FooterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZvb3RlclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Shared/HeaderPartial.cshtml]
+[D:/repositories/Service/Service/Views/Shared/HeaderPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhlYWRlclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Shared/MetatagsPartial.cshtml]
+[D:/repositories/Service/Service/Views/Shared/MetatagsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1ldGF0YWdzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Shared/ScriptsPartial.cshtml]
+[D:/repositories/Service/Service/Views/Shared/ScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Shared/SidebarPartial.cshtml]
+[D:/repositories/Service/Service/Views/Shared/SidebarPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNpZGViYXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/Shared/_Layout.cshtml]
+[D:/repositories/Service/Service/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/_ViewImports.cshtml]
+[D:/repositories/Service/Service/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Losck/Source/Repos/WebService/Service/Views/_ViewStart.cshtml]
+[D:/repositories/Service/Service/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

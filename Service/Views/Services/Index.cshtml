@@ -3,79 +3,77 @@
     <h2>Заполнить заявление о переводе</h2>
     <div class="div-box">
         <form asp-area="" asp-controller="Services" asp-action="Download" method="Post" asp-route-returnUrl="@ViewBag.returnUrl">
-            <div>
-                <label asp-for="FullName"></label>
-                <input asp-for="FullName" />
-                <span asp-validation-for="FullName"></span>
-            </div>
-            <div>
-                <label asp-for="Group"></label>
-                <input asp-for="Group" />
-                <span asp-validation-for="Group"></span>
-            </div>
-            <div>
-                <label asp-for="Direction"></label>
-                <select id="select" asp-for="Direction">
-                    <option selected disabled>Выберите текущее направление подготовки</option>
-                    <option>01.00.00 Математика и механика</option>
-                    <option>02.00.00 Компьютерные и информационные науки</option>
-                </select>
-                <span asp-validation-for="Direction"></span>
-            </div>
-            <div>
-                <label asp-for="FirstProfile"></label>
-                <select id="select" asp-for="FirstProfile">
-                    <option selected disabled>Выберите направление подготовки</option>
-                    <option>01.03.01 Математика</option>
-                    <option>01.03.03 Механика и математическое моделирование</option>
-                    <option>01.03.04 Прикладная математика</option>
-                    <option>02.03.01 Математика и компьютерные науки</option>
-                    <option>02.03.03 Математическое обеспечение и администрирование информационных систем</option>
-                </select>
-                <span asp-validation-for="FirstProfile"></span>
-            </div>
-            <div>
-                <label asp-for="SecondProfile"></label>
-                <select id="select" asp-for="SecondProfile">
-                    <option selected disabled>Выберите направление подготовки</option>
-                    <option>01.03.01 Математика</option>
-                    <option>01.03.03 Механика и математическое моделирование</option>
-                    <option>01.03.04 Прикладная математика</option>
-                    <option>02.03.01 Математика и компьютерные науки</option>
-                    <option>02.03.03 Математическое обеспечение и администрирование информационных систем</option>
-                </select>
-                <span asp-validation-for="SecondProfile"></span>
-            </div>
-            <div>
-                <label asp-for="ThirdProfile"></label>
-                <select id="select" asp-for="ThirdProfile">
-                    <option selected disabled>Выберите направление подготовки (Для КиИН выбирать "Не требуется")</option>
-                    <option>01.03.01 Математика</option>
-                    <option>01.03.03 Механика и математическое моделирование</option>
-                    <option>01.03.04 Прикладная математика</option>
-                    <option>02.03.01 Математика и компьютерные науки</option>
-                    <option>02.03.03 Математическое обеспечение и администрирование информационных систем</option>
-                    <option>Не требуется</option>
-                </select>
-                <span asp-validation-for="ThirdProfile"></span>
-            </div>
-            <div class="form-group">
-                Format:
-                <div class="row">
-                    @foreach (string format in Model.FormatMappingDictionary.Select(item => item.Key))
-                    {
-                        <div class="col-3">
-                            <div class="form-check form-check-inline">
-                                <input asp-for="Format" class="form-check-input" type="radio" id="@format" value="@format">
-                                <label for="@format" class="form-check-label">@format</label>
-                            </div>
+         <div>
+            <label asp-for="FullName"></label>
+            <input asp-for="FullName" />
+            <span asp-validation-for="FullName"></span>
+        </div>
+        <div>
+            <label asp-for="Group"></label>
+            <input asp-for="Group" />
+            <span asp-validation-for="Group"></span>
+        </div>
+        <div>
+            <label asp-for="Direction"></label>
+            <select id="select" asp-for="Direction">
+            <option selected disabled>Выберите текущее направление подготовки</option>
+                <option>01.00.00 Математика и механика</option>
+                <option>02.00.00 Компьютерные и информационные науки</option>
+            </select>
+            <span asp-validation-for="Direction"></span>
+        </div>
+        <div>
+            <label asp-for="FirstProfile"></label>
+            <select id="select" asp-for="FirstProfile">
+                <option selected disabled>Выберите направление подготовки</option>
+                <option>01.03.01 Математика</option>
+                <option>01.03.03 Механика и математическое моделирование</option>
+                <option>01.03.04 Прикладная математика</option>
+                <option>02.03.01 Математика и компьютерные науки</option>
+                <option>02.03.03 Математическое обеспечение и администрирование информационных систем</option>
+            </select>
+            <span asp-validation-for="FirstProfile"></span>
+        </div>
+        <div>
+            <label asp-for="SecondProfile"></label>
+            <select id="select" asp-for="SecondProfile">
+                <option selected disabled>Выберите направление подготовки</option>
+                <option>01.03.01 Математика</option>
+                <option>01.03.03 Механика и математическое моделирование</option>
+                <option>01.03.04 Прикладная математика</option>
+                <option>02.03.01 Математика и компьютерные науки</option>
+                <option>02.03.03 Математическое обеспечение и администрирование информационных систем</option>
+            </select>
+            <span asp-validation-for="SecondProfile"></span>
+        </div>
+        <div>
+            <label asp-for="ThirdProfile"></label>
+            <select id="select" asp-for="ThirdProfile">
+                <option selected disabled>Выберите направление подготовки (Для КиИН выбирать "Не требуется")</option>
+                <option>01.03.01 Математика</option>
+                <option>01.03.03 Механика и математическое моделирование</option>
+                <option>01.03.04 Прикладная математика</option>
+                <option>02.03.01 Математика и компьютерные науки</option>
+                <option>02.03.03 Математическое обеспечение и администрирование информационных систем</option>
+                <option>Не требуется</option>
+            </select>
+            <span asp-validation-for="ThirdProfile"></span>
+        </div>
+                    <div class="form-group">
+                        Format:
+                        <div class="row">
+                            @foreach (string format in Model.FormatMappingDictionary.Select(item => item.Key))
+                            {
+                                <div class="col-3">
+                                    <div class="form-check form-check-inline">
+                                        <input asp-for="Format" class="form-check-input" type="radio" id="@format" value="@format">
+                                        <label for="@format" class="form-check-label">@format</label>
+                                    </div>
+                                </div>
+                            }
                         </div>
-                    }
-                </div>
-            </div>
-
-            <div class="form-group"><input type="submit" value="Скачать заявление" class="button primary" /></div>          
-                
-        </form>
-    </div>
+                    </div>
+                    <div class="form-group"><input type="submit" value="Скачать заявление" class="button primary" /></div>
+        </form>      
+    </div>  
 </div>
