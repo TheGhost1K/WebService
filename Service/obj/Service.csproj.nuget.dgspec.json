@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\repositories\\Service\\Service\\Service.csproj": {}
+    "C:\\Users\\Losck\\Source\\Repos\\WebService\\Service\\Service.csproj": {}
   },
   "projects": {
-    "D:\\repositories\\Service\\Service\\Service.csproj": {
+    "C:\\Users\\Losck\\Source\\Repos\\WebService\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\repositories\\Service\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\Losck\\Source\\Repos\\WebService\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "D:\\repositories\\Service\\Service\\Service.csproj",
+        "projectPath": "C:\\Users\\Losck\\Source\\Repos\\WebService\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\Losck\\.nuget\\packages\\",
-        "outputPath": "D:\\repositories\\Service\\Service\\obj\\",
+        "outputPath": "C:\\Users\\Losck\\Source\\Repos\\WebService\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Losck\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -127,7 +127,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -139,7 +140,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
